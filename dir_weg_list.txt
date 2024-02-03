@@ -1,0 +1,38 @@
+def addNode(v):
+    if v in graph:
+        print(v,"node already existed")
+    else:
+        graph[v]=[]
+def addEdge(node1,node2,w):
+    if node1 not in graph:
+        print(node1,"is not available")
+    elif node2 not in graph:
+        print(node2,"is not available" )
+    else:
+        t=(node2,w)
+        g=graph[node1].append(t)
+def show():
+    for x in graph:
+        print(x,":",graph[x])
+graph={}
+while True:
+    print()
+    print("1.addNode\n 2.addEdge\n 3.show\n 4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node:")
+        addNode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        w=int(input("enter weight"))
+        addEdge(node1,node2,w)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+    
+
+    
